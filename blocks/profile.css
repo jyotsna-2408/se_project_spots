@@ -1,0 +1,127 @@
+.profile {
+  display: flex;
+  position: relative;
+}
+
+.profile:nth-child(3) {
+  align-self: flex-end;
+  margin-left: auto;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.profile__avatar {
+  height: 190px;
+  width: 190px;
+  margin-right: 20px;
+}
+
+.profile__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__name {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__description {
+  margin: 0;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 420px;
+}
+
+.profile__edit-button {
+  margin-top: auto;
+  border: none;
+  font-size: 16px;
+  font-style: medium;
+  background-color: #fcf5e5;
+  text-align: left;
+}
+
+.profile__add-button {
+  margin-left: auto;
+  border-radius: 8px;
+  background-color: #212121;
+  color: #fff;
+  height: 52px;
+  width: 149px;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: medium;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.profile__add-button:hover {
+  opacity: 80%;
+  /* background-color: rgba(33, 33, 33, 0.8);*/
+}
+
+.profile__edit-button:hover {
+  opacity: 80%;
+  /*color: rgba(33, 33, 33, 0.8);*/
+}
+
+@media screen and (max-width: 627px) {
+  .profile {
+    flex-direction: column;
+    max-width: 288px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .profile__avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 12px;
+  }
+
+  .profile__name {
+    font-size: 20px;
+    font-style: medium;
+    margin: 0 0 6px;
+    max-width: 280px;
+  }
+
+  .profile__description {
+    margin: 0 0 32px;
+    font-size: 16px;
+    font-style: medium;
+    max-width: 280px;
+  }
+
+  .profile__column {
+    margin: 0 0 20px;
+  }
+
+  .profile__edit-button {
+    border: none;
+    font-size: 16px;
+    font-style: medium;
+  }
+
+  .profile__add-button {
+    margin-left: 0;
+    width: 100%;
+    height: 52px;
+    font-size: 16px;
+  }
+}
