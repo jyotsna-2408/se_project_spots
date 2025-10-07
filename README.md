@@ -15,4 +15,4 @@ This project has created a single webpage for image sharing site for one user ac
 ## Deployment
 
 This webpage is deployed to GitHub pages
-Deployment link:
+[Deployment link](https://jyotsna-2408.github.io/se_project_spots/)
