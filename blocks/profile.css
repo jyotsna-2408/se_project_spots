@@ -72,6 +72,7 @@
   text-align: center;
   margin-top: auto;
   cursor: pointer;
+  border: none;
 }
 
 .profile__add-button:hover {
@@ -116,6 +117,7 @@
 
   .profile__edit-button {
     border: none;
+    align-self: center;
   }
 
   .profile__add-button {
