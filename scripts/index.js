@@ -77,7 +77,7 @@ function getCardElement(data) {
     cardLikeButtonElement.classList.toggle("card__like-button_active");
   });
   const cardDeleteButtonElement = cardElement.querySelector(
-    ".card_delete-button"
+    ".card__delete-button"
   );
   cardDeleteButtonElement.addEventListener("click", () => {
     cardElement.remove();

@@ -45,7 +45,7 @@
   cursor: pointer;
 }
 
-.card_delete-button {
+.card__delete-button {
   background-image: url(../images/Delete.svg);
   width: 32px;
   height: 32px;
@@ -71,7 +71,7 @@
   opacity: 40%;
 }
 
-.card_delete-button:hover {
+.card__delete-button:hover {
   background-image: url(../images/Delete_hover.svg);
 }
 
