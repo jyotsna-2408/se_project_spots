@@ -76,7 +76,7 @@
 }
 
 .profile__add-button:hover {
-  opacity: 80%;
+  opacity: 0.8;
   /* background-color: rgba(33, 33, 33, 0.8);*/
 }
 

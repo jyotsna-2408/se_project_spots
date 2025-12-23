@@ -54,7 +54,7 @@ const newPostCaptionInput = newPostModal.querySelector("#caption-input");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseButton = previewModal.querySelector(".modal__close-btn");
-const previewModalImagElement = previewModal.querySelector(".modal__image");
+const previewModalImageElement = previewModal.querySelector(".modal__image");
 const previewModalCaptionElement =
   previewModal.querySelector(".modal__caption");
 
@@ -85,8 +85,8 @@ function getCardElement(data) {
   });
 
   cardImageElement.addEventListener("click", () => {
-    previewModalImagElement.src = data.link;
-    previewModalImagElement.alt = data.name;
+    previewModalImageElement.src = data.link;
+    previewModalImageElement.alt = data.name;
     previewModalCaptionElement.textContent = data.name;
     openModal(previewModal);
   });
@@ -105,7 +105,6 @@ editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
   openModal(editProfileModal);
-  //editProfileModal.classList.add("modal_is-opened");
 });
 
 function handleEditFormSubmission(evt) {
@@ -113,19 +112,16 @@ function handleEditFormSubmission(evt) {
   profileNameElement.textContent = editProfileNameInput.value;
   profileDescriptionElement.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
-  //editProfileModal.classList.remove("modal_is-opened");
 }
 
 editProfileForm.addEventListener("submit", handleEditFormSubmission);
 
 editProfileCloseButton.addEventListener("click", function () {
   closeModal(editProfileModal);
-  // editProfileModal.classList.remove("modal_is-opened");
 });
 
 addNewPostButton.addEventListener("click", function () {
   openModal(newPostModal);
-  //newPostModal.classList.add("modal_is-opened");
 });
 
 function handleNewPostFormSubmission(evt) {
@@ -140,19 +136,17 @@ function handleNewPostFormSubmission(evt) {
   cardsList.prepend(cardElement);
 
   closeModal(newPostModal);
-  //newPostModal.classList.remove("modal_is-opened");
+  newPostForm.reset();
 }
 
 newPostForm.addEventListener("submit", handleNewPostFormSubmission);
 
 newPostCloseButton.addEventListener("click", function () {
   closeModal(newPostModal);
-  //newPostModal.classList.remove("modal_is-opened");
 });
 
 previewModalCloseButton.addEventListener("click", function () {
   closeModal(previewModal);
-  // editProfileModal.classList.remove("modal_is-opened");
 });
 
 initialCards.forEach(function (item) {
