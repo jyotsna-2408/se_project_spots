@@ -1,4 +1,5 @@
 .modal {
+  z-index: 1111;
   padding: 0 10px;
   visibility: hidden;
   opacity: 0;
@@ -48,6 +49,17 @@
 }
 
 .modal__caption {
+  margin: 0;
+  padding: 4px 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
+  position: absolute;
+  background-color: #212121;
+  border-radius: 8px;
+  left: 0;
+  top: calc(100% + 10px);
   color: white;
   font-family: "Poppins", Arial, sans-serif;
   font-weight: 500;
@@ -55,6 +67,7 @@
   line-height: 1.2;
 }
 .modal__close-btn {
+  background-repeat: no-repeat;
   position: absolute;
   top: 32px;
   right: 50px;
@@ -146,6 +159,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .modal__caption {
+    font-size: 16px;
+  }
   .modal__container {
     padding: 22px 12px 12px;
   }
