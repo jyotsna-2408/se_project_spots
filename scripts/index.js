@@ -36,18 +36,19 @@ const editProfileCloseButton =
 const editProfileForm = editProfileModal.querySelector(".modal__form");
 const addNewPostButton = document.querySelector(".profile__add-button");
 const newPostModal = document.querySelector("#new-post-modal");
+const newPostSubmitButton = document.querySelector(".modal__submit-btn");
 const newPostCloseButton = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
 
 const profileNameElement = document.querySelector(".profile__name");
 const profileDescriptionElement = document.querySelector(
-  ".profile__description"
+  ".profile__description",
 );
 const editProfileNameInput = editProfileModal.querySelector(
-  "#profile-name-input"
+  "#profile-name-input",
 );
 const editProfileDescriptionInput = editProfileModal.querySelector(
-  "#profile-description-input"
+  "#profile-description-input",
 );
 const newPostImageUrlInput = newPostModal.querySelector("#card-image-link");
 const newPostCaptionInput = newPostModal.querySelector("#caption-input");
@@ -77,7 +78,7 @@ function getCardElement(data) {
     cardLikeButtonElement.classList.toggle("card__like-button_active");
   });
   const cardDeleteButtonElement = cardElement.querySelector(
-    ".card__delete-button"
+    ".card__delete-button",
   );
   cardDeleteButtonElement.addEventListener("click", () => {
     cardElement.remove();
@@ -103,6 +104,10 @@ function closeModal(modal) {
 editProfileButton.addEventListener("click", function () {
   editProfileNameInput.value = profileNameElement.textContent;
   editProfileDescriptionInput.value = profileDescriptionElement.textContent;
+  resetValidation(editProfileForm, [
+    editProfileNameInput,
+    editProfileDescriptionInput,
+  ]);
   openModal(editProfileModal);
 });
 
@@ -129,13 +134,14 @@ function handleNewPostFormSubmission(evt) {
     name: newPostCaptionInput.value,
     link: newPostImageUrlInput.value,
   };
-  console.log("Image input element:", newPostImageUrlInput.value);
-  console.log("Caption input element:", newPostCaptionInput.value);
+  //console.log("Image input element:", newPostImageUrlInput.value);
+  //console.log("Caption input element:", newPostCaptionInput.value);
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-
+  evt.target.reset();
+  disableButton(newPostSubmitButton);
   closeModal(newPostModal);
-  newPostForm.reset();
+  //newPostForm.reset();
 }
 
 newPostForm.addEventListener("submit", handleNewPostFormSubmission);
